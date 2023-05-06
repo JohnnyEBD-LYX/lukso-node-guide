@@ -331,7 +331,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(validator_balance{job=\"validator\"})-(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*220)",
+          "expr": "sum(validator_balance{job=\"validator\"})-(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*32)",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -413,7 +413,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "(sum(validator_balance{job=\"validator\"}) - (count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*220))/(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*220)  ",
+          "expr": "(sum(validator_balance{job=\"validator\"}) - (count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*32))/(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*32)  ",
           "instant": true,
           "interval": "",
           "legendFormat": "",
@@ -894,7 +894,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"})-(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*220)",
+          "expr": "sum(validator_balance{job=\"validator\"})-(count(validator_balance{job=\"validator\"} > 16 and validator_statuses{job=\"validator\"} == 3)*32)",
           "instant": true,
           "interval": "",
           "legendFormat": "total_balance",
@@ -1474,7 +1474,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1h != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) + (220 * count(validator_balance{job=\"validator\"} offset 1h > 16))",
+          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1h != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) + (32 * count(validator_balance{job=\"validator\"} offset 1h > 16))",
           "instant": false,
           "interval": "",
           "intervalFactor": 3,
@@ -1557,7 +1557,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) + (220 * count(validator_balance{job=\"validator\"} offset 1d > 16))",
+          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) + (32 * count(validator_balance{job=\"validator\"} offset 1d > 16))",
           "instant": false,
           "interval": "",
           "legendFormat": "",
@@ -1639,7 +1639,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 7d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) + (220 * count(validator_balance{job=\"validator\"} offset 7d > 16))",
+          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 7d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) + (32 * count(validator_balance{job=\"validator\"} offset 7d > 16))",
           "instant": false,
           "interval": "",
           "legendFormat": "",
@@ -1721,7 +1721,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 30d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) + (220 * count(validator_balance{job=\"validator\"} offset 30d > 16))",
+          "expr": "sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 30d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) + (32 * count(validator_balance{job=\"validator\"} offset 30d > 16))",
           "instant": false,
           "interval": "",
           "legendFormat": "",
@@ -2072,7 +2072,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1h != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) +\t(220 * count(validator_balance{job=\"validator\"} offset 1h > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[1h:]))) * 365 * 24",
+          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1h != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) +\t(32 * count(validator_balance{job=\"validator\"} offset 1h > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[1h:]))) * 365 * 24",
           "hide": false,
           "interval": "",
           "legendFormat": "annualized hourly return",
@@ -2154,7 +2154,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) +\t(220 * count(validator_balance{job=\"validator\"} offset 1d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[1d:]))) * 365",
+          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 1d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) +\t(32 * count(validator_balance{job=\"validator\"} offset 1d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[1d:]))) * 365",
           "hide": false,
           "interval": "",
           "legendFormat": "annualized daily return",
@@ -2236,7 +2236,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 7d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) +\t(220 * count(validator_balance{job=\"validator\"} offset 7d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[7d:]))) * (365/7)",
+          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 7d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) +\t(32 * count(validator_balance{job=\"validator\"} offset 7d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[7d:]))) * (365/7)",
           "hide": false,
           "interval": "",
           "legendFormat": "annualized weekly return",
@@ -2318,7 +2318,7 @@
       "pluginVersion": "8.2.3",
       "targets": [
         {
-          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 30d != 0) - (220 * count(validator_balance{job=\"validator\"} > 16)) +\t(220 * count(validator_balance{job=\"validator\"} offset 30d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[30d:]))) * (365/30)",
+          "expr": "((sum(validator_balance{job=\"validator\"}) - sum(validator_balance{job=\"validator\"} offset 30d != 0) - (32 * count(validator_balance{job=\"validator\"} > 16)) +\t(32 * count(validator_balance{job=\"validator\"} offset 30d > 16)))/(220 * avg_over_time(count(validator_balance{job=\"validator\"} > 16)[30d:]))) * (365/30)",
           "hide": false,
           "interval": "",
           "legendFormat": "annualized monthly return",
@@ -2677,8 +2677,8 @@
           "mappingType": 1,
           "pattern": "Value #F",
           "thresholds": [
-            "165",
-            "220"
+            "24",
+            "32"
           ],
           "type": "number",
           "unit": "short"
@@ -2697,7 +2697,7 @@
           "link": true,
           "linkTargetBlank": true,
           "linkTooltip": "explorer",
-          "linkUrl": "https://explorer.consensus.l16.lukso.network/validator/${__cell_1:raw}",
+          "linkUrl": "https://explorer.consensus.mainnet.lukso.network/validator/${__cell_1:raw}",
           "mappingType": 1,
           "pattern": "pubkey_short",
           "thresholds": [],
@@ -6008,7 +6008,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(validator_balance) - sum(validator_balance offset 1h) - count(validator_balance > 16)*220 + count(validator_balance offset 1h > 0)*220",
+          "expr": "sum(validator_balance) - sum(validator_balance offset 1h) - count(validator_balance > 16)*32 + count(validator_balance offset 1h > 0)*32",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
@@ -6096,5 +6096,5 @@
   "timezone": "",
   "title": "Lukso",
   "uid": "92og3IP7z",
-  "version": 124
+  "version": 125
 }
